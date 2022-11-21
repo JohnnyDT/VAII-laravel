@@ -4,7 +4,7 @@ body{
     width: 100%;
     height: 100%;
     font-family: sans-serif;
-    /* background:url(https://i.pinimg.com/originals/50/6f/10/506f10fe6eb00274cc07527d7a1c915f.jpg); */
+    background:url(https://i.pinimg.com/originals/50/6f/10/506f10fe6eb00274cc07527d7a1c915f.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@ body{
 .nav-font-style{
     font-size: 20px;
     font-weight: 700;
-    color: white; 
+    color: white;
 }
 .para-style{
     font-size: 20px;
@@ -54,11 +54,6 @@ body{
     margin-bottom: 10px;
 }
 
-.login{
-    color: black;
-    background-color: white; 
-}
-
 .button-style:hover{
     background-color: #004D98;
 }
@@ -76,10 +71,11 @@ body{
 }
 
 .socialmedia{
-    margin-right: 5px; 
-    margin-left: 5px;
+    margin-right: 10px; 
+    margin-left: 10px;
     margin-bottom: 20px;
 }
+
 
 .login-container{
     margin-top: 5%;
