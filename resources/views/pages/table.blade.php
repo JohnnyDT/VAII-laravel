@@ -6,12 +6,14 @@
     <div class="row row-margin-top">
         <div class="col-md-4 offset-md-4">
             <h1 class="h1-style">Tabulka po 8. kole</h1>
-            <p class="para-style">
-                Prehladna tabulka timov.
-            </p>
+
         </div>
     </div>
-
+    <div class="col-md-4 offset-md-4">
+        <p class="para-style">
+            Prehladna tabulka timov.
+        </p>
+    </div>
     <div class="row row-margin-top">
         <div class="col-md-4 offset-md-4 col-style">
 

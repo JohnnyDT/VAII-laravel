@@ -1,71 +1,76 @@
 @extends('master')
-@section('title', 'Tabulka')
+@section('title', 'Login')
 
 @section('content')
 
-<body>
+    <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4" style="margin-top: 20px">
-                <h2>User Login</h2>
-                <hr>
-                <form action="{{ route('login-user') }}" method="POST">
+        <div class="container">
+            <div class="row">
 
-                    @if (Session::has('success'))
-                        <div class="alert alert-success">
-                            {{ Session::get('success') }}
+                <div class="col-md-3 col-md-offset-1" style="margin-top: 100px">
+                    <img src="{{ url('/images/user.png') }}" alt="Image" width="200" height="200" />
+                </div>
+
+                <div class="col-md-4 col-md-offset-2" style="margin-top: 20px">
+                    <h2>User login</h2>
+                    <hr>
+                    <form action="{{ route('login-user') }}" method="POST">
+
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
+
+                        @if (Session::has('fail'))
+                            <div class="alert alert-danger">
+                                {{ Session::get('fail') }}
+                            </div>
+                        @endif
+
+                        @csrf
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" placeholder="Enter Your Email" name="email"
+                                value="{{ old('email') }}">
+
+                            <span class="text-danger">
+                                @error('email')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+
                         </div>
-                    @endif
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter Your Password" name="password"
+                                value="">
 
-                    @if (Session::has('fail'))
-                        <div class="alert alert-danger">
-                            {{ Session::get('fail') }}
+                            <span class="text-danger">
+                                @error('password')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+
                         </div>
-                    @endif
-
-                    @csrf
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" placeholder="Enter Your Email" name="email"
-                            value="{{ old('email') }}">
-
-                        <span class="text-danger">
-                            @error('email')
-                                {{ $message }}
-                            @enderror
-                        </span>
-
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" placeholder="Enter Your Password" name="password"
-                            value="">
-
-                        <span class="text-danger">
-                            @error('password')
-                                {{ $message }}
-                            @enderror
-                        </span>
-
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-block btn-primary" type="submit">
-                            Login
-                        </button>
-                    </div>
-                    <br>
-                    <div class="txt">
-                        Create an account?
-                        <a href="registration">Sign Up</a>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <button class="btn btn-block btn-primary button-style" type="submit">
+                                Login
+                            </button>
+                        </div>
+                        <br>
+                        <div class="txt">
+                            Create an account?
+                            <a href="registration">Sign Up</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
 
-</body>
+    </body>
 
 @endsection

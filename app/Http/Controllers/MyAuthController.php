@@ -26,7 +26,17 @@ class MyAuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:4|max:20'
+            /* 'password' => 'required|min:4|max:20|regex:/[0-9]/' */
+            'password' => [
+                'required',
+                'string',
+                'min:4',             // must be at least 4 characters in length
+                'max:20',             
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+                'regex:/[@$!%*#?&]/', // must contain a special character
+            ]
         ]);
 
         $user = new User();
@@ -71,7 +81,7 @@ class MyAuthController extends Controller
         if (Session::has('loginId')){
             $data = User::where('id', '=', Session::get('loginId'))->first();
         }
-        return view('dashboard', compact('data'));
+        return view('pages.dashboard', compact('data'));
 
     }
 
@@ -82,5 +92,10 @@ class MyAuthController extends Controller
         }
     }
 
+
+    public function present()
+    {
+        return view("pages.present");
+    }
 
 }

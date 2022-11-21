@@ -30,9 +30,11 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 
-Route::get('/present', function () {
+/*Route::get('/present', function () {
     return view('pages.present');
-});
+});*/
+
+Route::get('/present', [MyAuthController::class, 'present'])->middleware('alreadyLoggedIn');
 
 Route::get('/login', [MyAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('/registration', [MyAuthController::class, 'registration'])->middleware('alreadyLoggedIn');
