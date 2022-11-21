@@ -38,6 +38,7 @@
                             </span>
 
                         </div>
+
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" placeholder="Enter Your Email" name="email"
@@ -50,19 +51,32 @@
                             </span>
 
                         </div>
+
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" placeholder="Enter Your Password" name="password"
                                 value="{{ old('password') }}">
 
+                            <span class="text-danger">
+                                @error('password')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+
                         </div>
 
-                        <span class="text-danger">
-                            @error('password')
-                                {{ $message }}
-                            @enderror
-                        </span>
+                        <div class="form-group">
+                            <label for="password">Password again</label>
+                            <input type="password" class="form-control" placeholder="Enter Your Password" name="password_confirmation"
+                                value="{{ old('password') }}">
 
+                            <span class="text-danger">
+                                @error('password')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+
+                        </div>
 
                         <div class="form-group">
                             <button class="btn btn-block btn-primary" type="submit">

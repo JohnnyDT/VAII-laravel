@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', 'Registration')
+@section('title', 'Account')
 
 @section('content')
 
@@ -7,8 +7,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4" style="margin-top: 20px">
-                    <h2>Welcome to Dashboard!</h2>
+                    <h2>Welcome to your account!</h2>
                     <hr>
+
+                    <h3>Hello {{ $data->name }}!</h3>
 
                     <table class="table">
                         <thead>

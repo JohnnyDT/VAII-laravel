@@ -26,9 +26,10 @@ class MyAuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            /* 'password' => 'required|min:4|max:20|regex:/[0-9]/' */
-            'password' => [
+            'password' => 'required|min:4|max:20|confirmed' 
+            /*'password' => [
                 'required',
+                'confirmed',
                 'string',
                 'min:4',             // must be at least 4 characters in length
                 'max:20',             
@@ -36,7 +37,7 @@ class MyAuthController extends Controller
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
                 'regex:/[0-9]/',      // must contain at least one digit
                 'regex:/[@$!%*#?&]/', // must contain a special character
-            ]
+            ]*/
         ]);
 
         $user = new User();
