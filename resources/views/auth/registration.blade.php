@@ -26,6 +26,7 @@
 
                         @csrf
 
+                        <!-- Name -->
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" class="form-control" placeholder="Enter Full Name" name="name"
@@ -38,7 +39,8 @@
                             </span>
 
                         </div>
-
+                        
+                        <!-- Email -->
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" placeholder="Enter Your Email" name="email"
@@ -52,6 +54,7 @@
 
                         </div>
 
+                        <!-- Password -->
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" placeholder="Enter Your Password" name="password"
@@ -65,6 +68,7 @@
 
                         </div>
 
+                        <!-- Password confirm -->
                         <div class="form-group">
                             <label for="password">Password again</label>
                             <input type="password" class="form-control" placeholder="Enter Your Password" name="password_confirmation"
@@ -78,6 +82,7 @@
 
                         </div>
 
+                        <!-- Register - button -->
                         <div class="form-group">
                             <button class="btn btn-block btn-primary" type="submit">
                                 Register
