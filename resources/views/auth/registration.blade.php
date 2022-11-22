@@ -102,7 +102,6 @@
                             <a href="login">Log In</a>
                         </div>
 
-
                     </form>
                 </div>
             </div>
