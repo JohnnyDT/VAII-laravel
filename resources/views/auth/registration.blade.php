@@ -39,7 +39,7 @@
                             </span>
 
                         </div>
-                        
+
                         <!-- Email -->
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -56,9 +56,17 @@
 
                         <!-- Password -->
                         <div class="form-group">
+
+
+
                             <label for="password">Password</label>
                             <input type="password" class="form-control" placeholder="Enter Your Password" name="password"
                                 value="{{ old('password') }}">
+
+
+
+
+
 
                             <span class="text-danger">
                                 @error('password')
@@ -71,8 +79,8 @@
                         <!-- Password confirm -->
                         <div class="form-group">
                             <label for="password">Password again</label>
-                            <input type="password" class="form-control" placeholder="Enter Your Password" name="password_confirmation"
-                                value="{{ old('password') }}">
+                            <input type="password" class="form-control" placeholder="Enter Your Password"
+                                name="password_confirmation" value="{{ old('password') }}">
 
                             <span class="text-danger">
                                 @error('password')
@@ -93,6 +101,8 @@
                             Do have an account?
                             <a href="login">Log In</a>
                         </div>
+
+
                     </form>
                 </div>
             </div>
